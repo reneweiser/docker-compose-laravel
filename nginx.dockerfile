@@ -1,7 +1,10 @@
 FROM nginx:stable-alpine
 
-ENV NGINXUSER=laravel
-ENV NGINXGROUP=laravel
+ARG UID
+ARG GID
+
+ENV NGINXUSER=${UID}
+ENV NGINXGROUP=${GID}
 
 RUN mkdir -p /var/www/html/public
 
