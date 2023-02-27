@@ -19,4 +19,6 @@ Then open `/etc/fstab` and add the following line to the end of the file:
 ```text
 /swapfile none swap sw 0 0
 ```
+# If your stack uses InertiaJS there are some pitfalls to consider
 
+This repo is meant to be used behind a nginx reverse proxy. If you are using InertiaJS the `route()`-helper will not generate the appropriate HTTPS Urls. Consider the workarounds suggested in [this issue on the Ziggy repository](https://github.com/tighten/ziggy/issues/410).
