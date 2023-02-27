@@ -29,6 +29,7 @@ services:
       - ./mysql:/var/lib/mysql
 
   php:
+    user: "${UID}:${GID}"
     build:
       context: .
       dockerfile: php.dockerfile
@@ -39,6 +40,7 @@ services:
       - ./src:/var/www/html
 
   composer:
+    user: "${UID}:${GID}"
     build:
       context: .
       dockerfile: composer.dockerfile
